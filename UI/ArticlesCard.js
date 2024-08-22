@@ -1,31 +1,33 @@
 import React from 'react';
-import {View, Text, Image, Button} from 'react-native';
+import {View, Text, Image, Button, FlatList} from 'react-native';
 import styles from '../styles/globalStyles.js';
 import ShoppingCar from './ShoppingCar.js';
 import {NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-//import Login from './Login.js'; // Replace with your actual screen
 //import ShoppingCar from './ShoppingCar.js'; // Replace with your actual screen
 
-const Stack = createNativeStackNavigator();
+//const Stack = createNativeStackNavigator();
 
+const articles = [
+    {
+      id: 1,
+      articlePicture: 'https://i.blogs.es/81640c/xiaomi-redmi-note-13-impresiones/1366_2000.jpeg',
+      articleName: 'Celular',
+      articleDescription: 'Es un celular',
+      articleValue: 1500000
+    },
+    {
+      id: 2,
+      articlePicture: 'https://i.blogs.es/ed843e/superpc-ap/450_1000.jpeg',
+      articleName: 'Computador',
+      articleDescription: 'Es un computador',
+      articleValue: 3500000
+    },
+  ];
 
-
-const ArticlesCard = ({article}) =>{
-
-    // const nav = useNavigation();
-
-    // onNavigate = () => {
-    //     nav.navigate('ShoppingCar')
-    // }
-    return(
-
-        
-
+  const Item = ({article}) =>(
         <View style={styles.card}>
-
-        
-
+            
             <Image source={{uri:article.articlePicture}} style={styles.picture}/>
             <Text style={styles.name}> Nombre del producto: {article.articleName}</Text>
             <Text> Descripcion del producto: {article.articleDescription}</Text>
@@ -37,6 +39,20 @@ const ArticlesCard = ({article}) =>{
 
 
         </View>
-    );
-};
+  );
+
+const ArticlesCard = () => {
+    return (
+      <View>
+        <Text> App Meli</Text>
+        <FlatList
+          data={articles}
+          renderItem={({item}) => <Item article={item} />}
+          keyExtractor={(article) => article.id.toString()}
+        />
+      </View>
+    )
+  }
+
+
 export default ArticlesCard;

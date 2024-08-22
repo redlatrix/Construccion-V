@@ -20,34 +20,8 @@ import ScreenList from "./UI/ScreenList";
 
 const Stack = createNativeStackNavigator();
 
-const articles = [
-  {
-    id: 1,
-    articlePicture: 'https://i.blogs.es/81640c/xiaomi-redmi-note-13-impresiones/1366_2000.jpeg',
-    articleName: 'Celular',
-    articleDescription: 'Es un celular',
-    articleValue: 1500000
-  },
-  {
-    id: 2,
-    articlePicture: 'https://i.blogs.es/ed843e/superpc-ap/450_1000.jpeg',
-    articleName: 'Computador',
-    articleDescription: 'Es un computador',
-    articleValue: 3500000
-  },
-];
-// const list = () => {
-//   return (
-//     <View>
-//       <Text> App Meli</Text>
-//       <FlatList
-//         data={articles}
-//         renderItem={({ item }) => <ArticlesCard article={item} />}
-//         keyExtractor={(item) => item.id.toString()}
-//       />
-//     </View>
-//   )
-// }
+
+
 const App = () => {
   return (
 
@@ -58,7 +32,7 @@ const App = () => {
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="Payment" component={Payment} />
         <Stack.Screen name="ShoppingCar" component={ShoppingCar} />
-        {/* <Stack.Screen name="ArticlesCard" component={ArticlesCard} /> */}
+        <Stack.Screen name="ArticlesCard" component={ArticlesCard} />
         <Stack.Screen name="ArticlesDetails" component={ArticlesDetails} />
         <Stack.Screen name="ArticlesCategories" component={ArticlesCategories} />
         <Stack.Screen name="MyShopping" component={MyShopping} />

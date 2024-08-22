@@ -1,17 +1,6 @@
 import React from 'react';
 import {View, Text, TextInput, Button} from 'react-native';
 import styles from '../styles/globalStyles.js';
-import Register from './Register.js';
-import Payment from './Payment.js';
-import ShoppingCar from './ShoppingCar.js';
-import ArticlesCard from './ArticlesCard.js';
-import ArticlesDetails from './ArticlesDetails.js';
-import ArticlesCategories from './ArticlesCategories.js';
-import MyShopping from './MyShopping.js';
-import MyFavourites from './MyFavourites.js';
-import Offers from './Offers.js';
-import Profile from './Profile.js';
-import Support from './Support.js';
 
 const ScreenList = ({navigation}) => {
   return (
@@ -35,10 +24,10 @@ const ScreenList = ({navigation}) => {
             title="Carrito de compras" 
             onPress={() => navigation.navigate('ShoppingCar')} 
         />
-        {/* <Button 
+        <Button 
             title="Lista y busqueda de articulos" 
             onPress={() => navigation.navigate('ArticlesCard')} 
-        /> */}
+        />
         <Button 
             title="Detalle de articulos" 
             onPress={() => navigation.navigate('ArticlesDetails')} 
