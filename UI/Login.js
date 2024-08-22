@@ -1,9 +1,9 @@
 import React from 'react';
 import {View, Text, TextInput, Button} from 'react-native';
-import styles from '../globalStyles.js';
+import styles from '../styles/globalStyles.js';
 import ArticlesCard from './ArticlesCard';
 
-const Login = () => {
+const Login = ({navigation}) => {
   return (
     <View>
       <View>
@@ -15,10 +15,11 @@ const Login = () => {
         />
         <TextInput
           placeholder="Contraseña"
+          secureTextEntry={true}
         />
         <Button 
             title="Iniciar sesión" 
-            onPress={() => {<ArticlesCard/>}} 
+            onPress={() => navigation.navigate('ShoppingCar')} 
         />
       </View>
     </View>

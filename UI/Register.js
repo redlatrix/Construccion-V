@@ -1,11 +1,15 @@
 import React from 'react';
-import {View, Text, Image, Button} from 'react-native';
-import styles from '.\styles\globalStyles.js';
+import {View, Text, Button} from 'react-native';
+import styles from '../styles/globalStyles.js';
 
-const Register = () =>{
+const ShoppingCar = () =>{
     return(
         <View >
+            <View>
+                <Text style={styles.title}>Registro</Text>
+            </View>
+
         </View>
     );
 };
-export default Register;
+export default ShoppingCar;

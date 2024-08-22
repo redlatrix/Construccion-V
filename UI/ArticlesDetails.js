@@ -1,11 +1,15 @@
 import React from 'react';
-import {View, Text, Image, Button} from 'react-native';
-import styles from '.\styles\globalStyles.js';
+import {View, Text, Button} from 'react-native';
+import styles from '../styles/globalStyles.js';
 
-const ArticlesDetails = () =>{
+const ShoppingCar = () =>{
     return(
         <View >
+            <View>
+                <Text style={styles.title}>Detalles de producto</Text>
+            </View>
+
         </View>
     );
 };
-export default ArticlesDetails;
+export default ShoppingCar;
