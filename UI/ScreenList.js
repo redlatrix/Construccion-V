@@ -8,10 +8,11 @@ const ScreenList = ({navigation}) => {
       <View>
         <Text style={styles.title}>Lista de pantallas</Text>
       </View>
-        <Button 
+        {/* <Button 
             title="Inicio de sesion" 
+            name='empanada'
             onPress={() => navigation.navigate('Login')} 
-        />
+        /> */}
         <Button 
             title="Registro de usuarios" 
             onPress={() => navigation.navigate('Register')} 

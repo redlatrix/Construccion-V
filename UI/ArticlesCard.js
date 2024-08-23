@@ -2,9 +2,8 @@ import React from 'react';
 import {View, Text, Image, Button, FlatList} from 'react-native';
 import styles from '../styles/globalStyles.js';
 import ShoppingCar from './ShoppingCar.js';
-import {NavigationContainer} from '@react-navigation/native';
+import {navigation} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-//import ShoppingCar from './ShoppingCar.js'; // Replace with your actual screen
 
 //const Stack = createNativeStackNavigator();
 
@@ -34,7 +33,7 @@ const articles = [
             <Text> Valor: {article.articlePrice}</Text>
             <Button 
                 title="Agregar carrito" 
-                onPress={() => navegation.navegate('ShoppingCar')}
+                // onPress={() => navigation.navigate(ShoppingCar)
             />
 
 
