@@ -9,6 +9,14 @@ const styles = StyleSheet.create({
     },
     title:{
         fontSize: 20,
+        padding: 20,
+    },
+    text:{
+        fontSize: 10,
+        color: '#f236f2'
+    },
+    subInfo:{
+        fontSize: 9,
     },
     picture:{
         width: 100,
