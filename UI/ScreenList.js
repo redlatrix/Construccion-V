@@ -10,7 +10,6 @@ const ScreenList = ({navigation}) => {
       </View>
         {/* <Button 
             title="Inicio de sesion" 
-            name='empanada'
             onPress={() => navigation.navigate('Login')} 
         /> */}
         <Button 

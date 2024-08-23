@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, Image, Button, FlatList} from 'react-native';
 import styles from '../styles/globalStyles.js';
 import ShoppingCar from './ShoppingCar.js';
-import {navigation} from '@react-navigation/native';
+//import {navigation} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 //const Stack = createNativeStackNavigator();
@@ -22,9 +22,51 @@ const articles = [
       articleDescription: 'Es un computador',
       articleValue: 3500000
     },
+    {
+      id: 3,
+      articlePicture: 'https://i.blogs.es/81640c/xiaomi-redmi-note-13-impresiones/1366_2000.jpeg',
+      articleName: 'Celular',
+      articleDescription: 'Es un celular',
+      articleValue: 1500000
+    },
+    {
+      id: 4,
+      articlePicture: 'https://i.blogs.es/ed843e/superpc-ap/450_1000.jpeg',
+      articleName: 'Computador',
+      articleDescription: 'Es un computador',
+      articleValue: 3500000
+    },
+    {
+      id: 5,
+      articlePicture: 'https://i.blogs.es/81640c/xiaomi-redmi-note-13-impresiones/1366_2000.jpeg',
+      articleName: 'Celular',
+      articleDescription: 'Es un celular',
+      articleValue: 1500000
+    },
+    {
+      id: 6,
+      articlePicture: 'https://i.blogs.es/ed843e/superpc-ap/450_1000.jpeg',
+      articleName: 'Computador',
+      articleDescription: 'Es un computador',
+      articleValue: 3500000
+    },
+    {
+      id: 7,
+      articlePicture: 'https://i.blogs.es/81640c/xiaomi-redmi-note-13-impresiones/1366_2000.jpeg',
+      articleName: 'Celular',
+      articleDescription: 'Es un celular',
+      articleValue: 1500000
+    },
+    {
+      id: 8,
+      articlePicture: 'https://i.blogs.es/ed843e/superpc-ap/450_1000.jpeg',
+      articleName: 'Computador',
+      articleDescription: 'Es un computador',
+      articleValue: 3500000
+    },
   ];
 
-  const Item = ({article}) =>(
+  const Item = ({article, navigation}) =>(
         <View style={styles.card}>
             
             <Image source={{uri:article.articlePicture}} style={styles.picture}/>
@@ -33,20 +75,20 @@ const articles = [
             <Text> Valor: {article.articlePrice}</Text>
             <Button 
                 title="Agregar carrito" 
-                // onPress={() => navigation.navigate(ShoppingCar)
+                onPress={() => navigation.navigate('ShoppingCar')}
             />
 
 
         </View>
   );
 
-const ArticlesCard = () => {
+const ArticlesCard = ({navigation}) => {
     return (
       <View>
         <Text> App Meli</Text>
         <FlatList
           data={articles}
-          renderItem={({item}) => <Item article={item} />}
+          renderItem={({item}) => <Item article={item} navigation={navigation} />}
           keyExtractor={(article) => article.id.toString()}
         />
       </View>

@@ -24,7 +24,6 @@ const Login = ({navigation}) => {
           secureTextEntry={true}
         />
         <Button 
-            name = 'conaji'
             title="Iniciar sesión" 
             onPress={() => navigation.navigate('ScreenList')} 
         />
