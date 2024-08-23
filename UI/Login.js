@@ -9,7 +9,7 @@ const Login = ({navigation}) => {
   const [password, setPassword] = useState('');
   const [errorPasword, setErrorPassword] = useState('');
 
-  const validarUser = (text) => {
+  const validateUser = (text) => {
     setUser(text);
     if (text.length>10) {
       setErrorUser('El User no es válido');
@@ -17,7 +17,7 @@ const Login = ({navigation}) => {
       setErrorUser('');
     }
   };
-  const validarPassword = (text) => {
+  const validatePassword = (text) => {
     const validatorRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?`~]/g;
     setPassword(text);
     if (text.length>8 || !text.match(validatorRegex) || !text.match(/[0-9]|[A-Z]/g) ) {
@@ -36,7 +36,7 @@ const Login = ({navigation}) => {
         <TextInput
           placeholder="Usuario"
           value={user}
-          onChangeText={validarUser}
+          onChangeText={validateUser}
         />
         <Text style={styles.subInfo}>Max. 10 Caracteres </Text>
         {errorUser ? <Text style={{ color: 'red' }}>{errorUser}</Text> : null}
@@ -44,7 +44,7 @@ const Login = ({navigation}) => {
           placeholder="Contraseña"
           value={password}
           secureTextEntry={true}
-          onChangeText={validarPassword}
+          onChangeText={validatePassword}
         />
         <Text style={styles.subInfo}>Max. 8 Caracteres </Text>
         <Text style={styles.subInfo}>debe incluir: 1 Mayúsculas </Text>
