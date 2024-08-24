@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, Button, FlatList } from 'react-native';
+import { View, Text, Image, FlatList, TouchableOpacity } from 'react-native';
 import styles from '../styles/globalStyles.js';
 
 const articles = [
@@ -62,19 +62,28 @@ const articles = [
 ];
 
 const Item = ({ article, navigation }) => (
-  <ScrollView contentContainerStyle={styles.cardContainer}>
-    {articles.map((article, index) => (
-      <View
-        key={article.id}
-        style={[
-          styles.itemWrapper,
-          { marginRight: (index + 1) % 2 === 0 ? 0 : 10 }
-        ]}
-      >
-        <Item article={article} navigation={navigation} />
+  <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('ArticlesDetails', { article: article[1] })}>
+    <View >
+      <View style={styles.containerImage}>
+        <Image source={{ uri: article.articlePicture }} style={styles.picture} /></View>
+      <View style={styles.row}>
+        <Text style={styles.title1}>{article.articleName}</Text>
       </View>
-    ))}
-  </ScrollView>
+      <View style={styles.row}>
+        <Text style={styles.subtitle}> Descripción: </Text>
+        <Text style={styles.text2}>{article.articleDescription}</Text>
+      </View>
+      <View style={styles.row}>
+        <Text style={styles.subtitle}> Valor: </Text>
+        <Text style={styles.text2}>{article.articleValue}</Text>
+      </View>
+      <TouchableOpacity style={styles.button}
+        activeOpacity={0.7}
+        onPress={() => navigation.navigate('ShoppingCar')} >
+        <Text style={styles.buttonText}>Agregar carrito</Text>
+      </TouchableOpacity>
+    </View>
+  </TouchableOpacity >
 );
 
 const ArticlesCard = ({ navigation }) => {

@@ -1,7 +1,7 @@
 import { React, useState} from 'react';
 import {View, Text, TextInput, TouchableOpacity, ScrollView} from 'react-native';
 import styles from '../styles/globalStyles.js';
-import ModalSelector from '@react-native-modal-selector';
+// import ModalSelector from '@react-native-modal-selector';
 
 const Register = ({navigation}) => {
 
@@ -199,53 +199,7 @@ const Register = ({navigation}) => {
         
         {errorPasword ? <Text style={{ color: 'red' }}>{errorPasword}</Text> : null}
 
-        <Text style={styles.label}>Select an option:</Text>
-      <ModalSelector
-        data={data1}
-        initValue="Selecciona departament"
-        onChange={(option) => {
-          setSelectedValue1(option.label);
-          setIsSecondSelectorEnabled(true); 
-          setSelectedValue2(null); 
-        }}
-      />
-      <Text style={styles.selectedText}>Selected: {selectedValue1}</Text>
 
-      {isSecondSelectorEnabled && (
-        <>
-          <Text style={styles.label}>Select a suboption:</Text>
-          <ModalSelector
-            data={data2[selectedValue1]}
-            initValue="selecciona municipio"
-            onChange={(option) => setSelectedValue2(option.label)}
-          />
-          <Text style={styles.selectedText}>Selected: {selectedValue2}</Text>
-        </>
-      )}
-
-        <Text style={styles.label}>Select an option:</Text>
-      <ModalSelector
-        data={data1}
-        initValue="Selecciona departament"
-        onChange={(option) => {
-          setSelectedValue1(option.label);
-          setIsSecondSelectorEnabled(true); 
-          setSelectedValue2(null); 
-        }}
-      />
-      <Text style={styles.selectedText}>Selected: {selectedValue1}</Text>
-
-      {isSecondSelectorEnabled && (
-        <>
-          <Text style={styles.label}>Select a suboption:</Text>
-          <ModalSelector
-            data={data2[selectedValue1]}
-            initValue="selecciona municipio"
-            onChange={(option) => setSelectedValue2(option.label)}
-          />
-          <Text style={styles.selectedText}>Selected: {selectedValue2}</Text>
-        </>
-      )}
 
         <TouchableOpacity style={styles.button}
           activeOpacity={0.7}
