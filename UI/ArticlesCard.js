@@ -1,11 +1,6 @@
 import React from 'react';
 import {View, Text, Image, Button, FlatList} from 'react-native';
 import styles from '../styles/globalStyles.js';
-import ShoppingCar from './ShoppingCar.js';
-//import {navigation} from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-//const Stack = createNativeStackNavigator();
 
 const articles = [
     {
@@ -72,7 +67,7 @@ const articles = [
             <Image source={{uri:article.articlePicture}} style={styles.picture}/>
             <Text style={styles.name}> Nombre del producto: {article.articleName}</Text>
             <Text> Descripcion del producto: {article.articleDescription}</Text>
-            <Text> Valor: {article.articlePrice}</Text>
+            <Text > Valor: {article.articleValue}</Text>
             <Button 
                 title="Agregar carrito" 
                 onPress={() => navigation.navigate('ShoppingCar')}
