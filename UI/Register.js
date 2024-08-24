@@ -1,7 +1,7 @@
 import { React, useState} from 'react';
 import {View, Text, TextInput, TouchableOpacity, ScrollView} from 'react-native';
 import styles from '../styles/globalStyles.js';
-import ModalSelector from 'react-native-modal-selector';
+import ModalSelector from '@react-native-modal-selector';
 
 const Register = ({navigation}) => {
 
@@ -205,8 +205,8 @@ const Register = ({navigation}) => {
         initValue="Selecciona departament"
         onChange={(option) => {
           setSelectedValue1(option.label);
-          setIsSecondSelectorEnabled(true); // Habilitar el segundo selector
-          setSelectedValue2(null); // Reiniciar el segundo selector si cambia el primero
+          setIsSecondSelectorEnabled(true); 
+          setSelectedValue2(null); 
         }}
       />
       <Text style={styles.selectedText}>Selected: {selectedValue1}</Text>
@@ -229,8 +229,8 @@ const Register = ({navigation}) => {
         initValue="Selecciona departament"
         onChange={(option) => {
           setSelectedValue1(option.label);
-          setIsSecondSelectorEnabled(true); // Habilitar el segundo selector
-          setSelectedValue2(null); // Reiniciar el segundo selector si cambia el primero
+          setIsSecondSelectorEnabled(true); 
+          setSelectedValue2(null); 
         }}
       />
       <Text style={styles.selectedText}>Selected: {selectedValue1}</Text>
