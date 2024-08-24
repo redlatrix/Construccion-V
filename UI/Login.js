@@ -2,7 +2,7 @@ import { React, useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import styles from '../styles/globalStyles.js';
 
-const logo = require('C:/Users/Maria/OneDrive/Escritorio/Construccion-V/assets/images/Logo.png');
+const logo = require('C:/Users/samue/Desktop/Desarrollo_movil/Meli/assets/images/Logo.png');
 
 const Login = ({ navigation }) => {
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, Image, FlatList, TouchableOpacity } from 'react-native';
 import styles from '../styles/globalStyles.js';
-import Icon from 'react-native-vector-icons/Ionicons';
 
 const articles = [
     {
