@@ -66,7 +66,7 @@ const Item = ({ article, navigation }) => (
     <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('ArticlesDetails', { article: article[1] })}>
         <View >
             <View style={styles.iconContainer}>
-                <Icon name="heart-outline" size={24} color="#900" style={styles.heartIcon} />
+                <Text>❤</Text>
             </View>
             <View style={styles.containerImage}>
                 <Image source={{ uri: article.articlePicture }} style={styles.picture} /></View>

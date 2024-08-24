@@ -1,10 +1,10 @@
 import React from 'react';
-import {View, Text, Button} from 'react-native';
+import { View, Text, Image } from 'react-native';
 import styles from '../styles/globalStyles.js';
 
-const Profile = () =>{
-    return(
-        <View style={styles.container}>
+const Profile = () => {
+    return (
+        <View >
             <View>
                 <Image source={{ uri: 'https://i.blogs.es/81640c/xiaomi-redmi-note-13-impresiones/1366_2000.jpeg' }} style={styles.picture}></Image>
             </View>
