@@ -1,15 +1,41 @@
-import React from 'react';
-import {View, Text, Button} from 'react-native';
+import {React} from 'react';
+import {View, Text, Image, Button, TextInput, FlatList} from 'react-native';
 import styles from '../styles/globalStyles.js';
 
-const ShoppingCar = () =>{
-    return(
-        <View >
-            <View>
-                <Text style={styles.title}>Detalles de producto</Text>
-            </View>
+const articles = [
+  {
+    id: 1,
+    articlePicture:
+      'https://i.blogs.es/81640c/xiaomi-redmi-note-13-impresiones/1366_2000.jpeg',
+    articleName: 'Celular',
+    articleDescription: 'Es un celular',
+    articleValue: 1500000,
+  },
+];
 
-        </View>
-    );
+const Item = ({article}) => (
+  <View style={styles.card}>
+    <Image source={{uri: article.articlePicture}} style={styles.detailPicture} />
+    <Text style={styles.name}> Nombre del producto: {article.articleName}</Text>
+    <Text> Descripcion del producto: {article.articleDescription}</Text>
+    <Text> Valor: {article.articleValue}</Text>
+  </View>
+);
+
+const ArticlesDetails = () => {
+
+  return (
+    <View>
+      <View>
+        <Text style={styles.title}>Mi carrito de compras</Text>
+      </View>
+      <FlatList
+        data={articles}
+        renderItem={({item}) => <Item article={item} />}
+        keyExtractor={article => article.id.toString()}
+      />
+
+    </View>
+  );
 };
-export default ShoppingCar;
+export default ArticlesDetails;

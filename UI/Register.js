@@ -157,7 +157,7 @@ const Register = ({navigation}) => {
       {errorAddress ? <Text style={{ color: 'red' }}>{errorAddress}</Text> : null}
 
         <TextInput
-            placeholder="YYYY-MM-DD"
+            placeholder="DD/MM/AAAA"
             value={birthDate}
             onChangeText={validateBirthday}
       />
@@ -198,30 +198,6 @@ const Register = ({navigation}) => {
         <Text style={styles.validationText}>letras y números </Text>
         
         {errorPasword ? <Text style={{ color: 'red' }}>{errorPasword}</Text> : null}
-
-        <Text style={styles.label}>Select an option:</Text>
-      <ModalSelector
-        data={data1}
-        initValue="Selecciona departament"
-        onChange={(option) => {
-          setSelectedValue1(option.label);
-          setIsSecondSelectorEnabled(true); // Habilitar el segundo selector
-          setSelectedValue2(null); // Reiniciar el segundo selector si cambia el primero
-        }}
-      />
-      <Text style={styles.selectedText}>Selected: {selectedValue1}</Text>
-
-      {isSecondSelectorEnabled && (
-        <>
-          <Text style={styles.label}>Select a suboption:</Text>
-          <ModalSelector
-            data={data2[selectedValue1]}
-            initValue="selecciona municipio"
-            onChange={(option) => setSelectedValue2(option.label)}
-          />
-          <Text style={styles.selectedText}>Selected: {selectedValue2}</Text>
-        </>
-      )}
 
         <Text style={styles.label}>Select an option:</Text>
       <ModalSelector

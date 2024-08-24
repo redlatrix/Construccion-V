@@ -56,7 +56,7 @@ const ShoppingCar = ({navigation}) => {
       {errorCant ? <Text style={{ color: 'red' }}>{errorCant}</Text> : null}
 
       <Button
-        title="Agregar carrito"
+        title="Realizar pago"
         onPress={() => navigation.navigate('Payment')}
       />
     </View>
