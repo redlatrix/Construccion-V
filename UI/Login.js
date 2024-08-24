@@ -1,8 +1,10 @@
-import { React, useState} from 'react';
-import {View, Text, TextInput, Button} from 'react-native';
+import { React, useState } from 'react';
+import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
 import styles from '../styles/globalStyles.js';
 
-const Login = ({navigation}) => {
+const logo = require('C:/Users/Maria/OneDrive/Documentos/TDEA/Construccion-V/assets/images/Logo.png');
+
+const Login = ({ navigation }) => {
 
   const [user, setUser] = useState('');
   const [errorUser, setErrorUser] = useState('');
@@ -11,7 +13,7 @@ const Login = ({navigation}) => {
 
   const validateUser = (text) => {
     setUser(text);
-    if (text.length>10) {
+    if (text.length > 10) {
       setErrorUser('El User no es válido');
     } else {
       setErrorUser('');
@@ -20,48 +22,56 @@ const Login = ({navigation}) => {
   const validatePassword = (text) => {
     const validatorRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?`~]/g;
     setPassword(text);
-    if (text.length>8 || !text.match(validatorRegex) || !text.match(/[0-9]|[A-Z]/g) ) {
+    if (text.length > 8 || !text.match(validatorRegex) || !text.match(/[0-9]|[A-Z]/g)) {
       setErrorPassword('La contraseña no es valida');
     } else {
-      setErrorPassword  ('');
+      setErrorPassword('');
     }
   };
 
   return (
-    <View>
-      <View>
-        <Text style={styles.title}>Iniciar Sesion</Text>
+    <View style={styles.container}>
+        <View style={styles.containerImage}>
+        <Image source={logo} style={styles.logo}/>
+
+        </View>
+      <View style={{paddingBottom: -15}} >
+        <Text style={styles.title1}>¡Hola!</Text>
+        <Text style={styles.title}>Inicia sesión en tu cuenta</Text>
       </View>
-      <View>
-        <TextInput
+      <View style={styles.section}>
+        <TextInput style={styles.input}
           placeholder="Usuario"
           value={user}
           onChangeText={validateUser}
         />
-        <Text style={styles.subInfo}>Max. 10 Caracteres </Text>
+        <Text style={styles.validationText}>Max. 10 Caracteres </Text>
         {errorUser ? <Text style={{ color: 'red' }}>{errorUser}</Text> : null}
-        <TextInput
+        <TextInput style={styles.input}
           placeholder="Contraseña"
           value={password}
           secureTextEntry={true}
           onChangeText={validatePassword}
         />
-        <Text style={styles.subInfo}>Max. 8 Caracteres </Text>
-        <Text style={styles.subInfo}>debe incluir: 1 Mayúsculas </Text>
-        <Text style={styles.subInfo}>debe incluir: 1 caracter especial </Text>
-        <Text style={styles.subInfo}>letras y números </Text>
-        
+        <Text style={styles.validationText}>Max. 8 Caracteres </Text>
+        <Text style={styles.validationText}>debe incluir: 1 Mayúsculas </Text>
+        <Text style={styles.validationText}>debe incluir: 1 caracter especial </Text>
+        <Text style={styles.validationText}>letras y números </Text>
+
         {errorPasword ? <Text style={{ color: 'red' }}>{errorPasword}</Text> : null}
-        <Button 
-            title="Iniciar sesión" 
-            onPress={() => navigation.navigate('ScreenList')} 
-        />
-        <Button 
-            title="Registrar Usuario" 
-            onPress={() => navigation.navigate('Register')} 
-        />
+        <TouchableOpacity style={styles.button}
+          activeOpacity={0.7}
+          onPress={() => navigation.navigate('ScreenList')} >
+          <Text style={styles.buttonText}>Iniciar sesion</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.buttonInline}
+          title="Registrar Usuario"
+          onPress={() => navigation.navigate('Register')}>
+          <Text style={styles.buttonInlineText}>Registrarse</Text>
+        </TouchableOpacity>
       </View>
-      
+
     </View>
   );
 };

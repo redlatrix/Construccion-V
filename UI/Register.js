@@ -1,5 +1,5 @@
 import { React, useState} from 'react';
-import {View, Text, TextInput, Button} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, ScrollView} from 'react-native';
 import styles from '../styles/globalStyles.js';
 
 const Register = ({navigation}) => {
@@ -40,60 +40,61 @@ const Register = ({navigation}) => {
   };
 
   return (
-    <View>
+    <ScrollView style={styles.container}>
       <View>
-        <Text style={styles.title}>Iniciar Sesion</Text>
+        <Text style={styles.title1}>Registrar usuario</Text>
       </View>
       <View>
-        <TextInput
+        <TextInput style={styles.input}
           placeholder="Usuario"
           value={user}
           onChangeText={validateUser}
         />
-        <Text style={styles.subInfo}>Max. 10 Caracteres </Text>
+        <Text style={styles.validationText}>Max. 10 Caracteres </Text>
         {errorUser ? <Text style={{ color: 'red' }}>{errorUser}</Text> : null}
 
-        <TextInput
+        <TextInput style={styles.input}
           placeholder="Email"
           value={email}
           onChangeText={validateEmail}
         />
-        <Text style={styles.subInfo}>Max. 10 Caracteres </Text>
+        <Text style={styles.validationText}>Max. 10 Caracteres </Text>
         {errorEmail ? <Text style={{ color: 'red' }}>{errorEmail}</Text> : null}
 
-        <TextInput
+        <TextInput style={styles.input}
           placeholder="Contraseña"
           value={password}
           secureTextEntry={true}
           onChangeText={validatePassword}
         />
-        <Text style={styles.subInfo}>Max. 8 Caracteres </Text>
-        <Text style={styles.subInfo}>debe incluir: 1 Mayúsculas </Text>
-        <Text style={styles.subInfo}>debe incluir: 1 caracter especial </Text>
-        <Text style={styles.subInfo}>letras y números </Text>
+        <Text style={styles.validationText}>Max. 8 Caracteres </Text>
+        <Text style={styles.validationText}>debe incluir: 1 Mayúsculas </Text>
+        <Text style={styles.validationText}>debe incluir: 1 caracter especial </Text>
+        <Text style={styles.validationText}>letras y números </Text>
         
         {errorPasword ? <Text style={{ color: 'red' }}>{errorPasword}</Text> : null}
 
-        <TextInput
+        <TextInput style={styles.input}
           placeholder="Confirmar contraseña"
           value={password}
           secureTextEntry={true}
           onChangeText={validatePassword}
         />
-        <Text style={styles.subInfo}>Max. 8 Caracteres </Text>
-        <Text style={styles.subInfo}>debe incluir: 1 Mayúsculas </Text>
-        <Text style={styles.subInfo}>debe incluir: 1 caracter especial </Text>
-        <Text style={styles.subInfo}>letras y números </Text>
+        <Text style={styles.validationText}>Max. 8 Caracteres </Text>
+        <Text style={styles.validationText}>debe incluir: 1 Mayúsculas </Text>
+        <Text style={styles.validationText}>debe incluir: 1 caracter especial </Text>
+        <Text style={styles.validationText}>letras y números </Text>
         
         {errorPasword ? <Text style={{ color: 'red' }}>{errorPasword}</Text> : null}
 
-        <Button 
-            title="Registrar Usuario" 
-            onPress={() => navigation.navigate('Login')} 
-        />
+        <TouchableOpacity style={styles.button}
+          activeOpacity={0.7}
+          onPress={() => navigation.navigate('Login')} >
+          <Text style={styles.buttonText}>Registrar Usuario</Text>
+        </TouchableOpacity>
       </View>
       
-    </View>
+    </ScrollView>
   );
 };
 export default Register;
